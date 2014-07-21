@@ -34,4 +34,52 @@ EOS
     actual.should == expected
   end
 
+  it "should corectly print February 2015" do
+    expected = <<EOS
+   February 2015
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6  7
+ 8  9 10 11 12 13 14
+15 16 17 18 19 20 21
+22 23 24 25 26 27 28
+EOS
+
+    # exec : Executes the command on the command line
+    actual = `./cal 02 2015`
+    actual.should == expected
+  end
+
+  it "should corectly print January 2016" do
+    expected = <<EOS
+    January 2016
+Su Mo Tu We Th Fr Sa
+                1  2
+ 3  4  5  6  7  8  9
+10 11 12 13 14 15 16
+17 18 19 20 21 22 23
+24 25 26 27 28 29 30
+31
+EOS
+
+    # exec : Executes the command on the command line
+    actual = `./cal 01 2016`
+    actual.should == expected
+  end
+
+  it "should corectly print February 1900" do
+    expected = <<EOS
+   February 1900
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28
+EOS
+
+    # exec : Executes the command on the command line
+    actual = `./cal 02 1900`
+    actual.should == expected
+  end
+
 end
