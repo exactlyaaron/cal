@@ -17,7 +17,13 @@ class Year
     return false
   end
 
+  def year_header
+    "#{@num}".center(64).rstrip
+  end
+
   def to_s
+    output = year_header
+    
   end
 
 end

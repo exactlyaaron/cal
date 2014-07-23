@@ -2,8 +2,13 @@
 
 require_relative 'lib/month'
 
-month = ARGV[0].to_i
-year = ARGV[1].to_i
-
-month = Month.new(month, year)
-puts month.to_s
+if ARGV.length == 2
+  month = ARGV[0].to_i
+  year = ARGV[1].to_i
+  month = Month.new(month, year)
+  puts month.to_s
+elsif ARGV.length == 1
+  year_num = ARGV[0].to_i
+  year = Year.new(year_num)
+  puts year.to_s
+end

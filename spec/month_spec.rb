@@ -94,52 +94,37 @@ RSpec.describe Month do
     end
   end
 
-  context ".grid" do
-    it "should print out 1 - 31" do
+#   context ".print_weeks" do
+#     it "should print out 1 - 31" do
+#       month = Month.new(12, 2012)
+#       month.build_month_array
+#       expected = <<EOS
+#                    1
+#  2  3  4  5  6  7  8
+#  9 10 11 12 13 14 15
+# 16 17 18 19 20 21 22
+# 23 24 25 26 27 28 29
+# 30 31
+# EOS
+#       actual = month.print_weeks
+#       actual.should == expected
+#     end
+#   end
+
+  #testing a .build_first_week method
+  context ".build_month_array" do
+
+    it "should build the first line of the month array" do
       month = Month.new(12, 2012)
-      expected = <<EOS
-                   1
- 2  3  4  5  6  7  8
- 9 10 11 12 13 14 15
-16 17 18 19 20 21 22
-23 24 25 26 27 28 29
-30 31
-EOS
-      actual = month.grid
-      actual.should == expected
-    end
-  end
-
-  #testing a .build_big_string method
-  context ".build_big_string" do
-
-    it "should print some spaces at least" do
-      month = Month.new(12, 2012)
-      month.build_big_string.should == "                   1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
-    end
-
-  end
-
-  #testing a .remove_spaces_for_new_lines method
-  context ".remove_spaces_for_new_lines" do
-
-    it "should print some spaces at least" do
-      month = Month.new(12, 2012)
-      month.build_big_string
-      month.remove_spaces_for_new_lines.should == "                   1 2  3  4  5  6 7  8  9  10 11 12 1314 15 16 17 18 19 2021 22 23 24 25 26 2728 29 30 31"
+      month.build_month_array.should == [[nil, nil, nil, nil, nil, nil, 1],
+                                         [2, 3, 4, 5, 6, 7, 8],
+                                         [9, 10, 11, 12, 13, 14, 15],
+                                         [16, 17, 18, 19, 20, 21, 22],
+                                         [23, 24, 25, 26, 27, 28, 29],
+                                         [30, 31]]
     end
 
   end
 
-  # #testing a .break_big_string_into_array method
-  # context ".break_big_string_into_array" do
-  #
-  #   it "should break the big string into an array" do
-  #     month = Month.new(12, 2012)
-  #     month.build_big_string
-  #     month.break_big_string_into_array.should == ["                   1", " 2  3  4  5  6  7  8", " 9 10 11 12 13 14 15", "16 17 18 19 20 21 22", "23 24 25 26 27 28   "]
-  #   end
-  #
-  # end
 
 end
