@@ -37,6 +37,7 @@ class Month
     string = ""
     @month_array[i].length.times do |j|
       day = @month_array[i][j]
+
       if day == nil
         string << "   "
       elsif day <= 9
@@ -44,8 +45,14 @@ class Month
       else
         string << "#{day} "
       end
+
+      if (i >= 5 && day == nil)
+        string.rstrip!
+        return string << " "
+      end
     end
-    return string
+    string.rstrip!
+    return string << " "
   end
 
   def length
@@ -85,6 +92,10 @@ class Month
         if @day_count < length
           @day_count += 1
           week << @day_count
+        else
+          (7 - week.length).times do |i|
+            week << nil
+          end
         end
       end
       @month_array << week

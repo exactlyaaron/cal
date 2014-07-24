@@ -28,6 +28,7 @@ Su Mo Tu We Th Fr Sa
 15 16 17 18 19 20 21
 22 23 24 25 26 27 28
 29 30 31
+
 EOS
 
     actual = `./cal 12 2013`
@@ -42,6 +43,8 @@ Su Mo Tu We Th Fr Sa
  8  9 10 11 12 13 14
 15 16 17 18 19 20 21
 22 23 24 25 26 27 28
+
+
 EOS
 
     # exec : Executes the command on the command line
@@ -75,6 +78,7 @@ Su Mo Tu We Th Fr Sa
 11 12 13 14 15 16 17
 18 19 20 21 22 23 24
 25 26 27 28
+
 EOS
 
     # exec : Executes the command on the command line

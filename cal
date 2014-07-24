@@ -11,4 +11,6 @@ elsif ARGV.length == 1
   year_num = ARGV[0].to_i
   year = Year.new(year_num)
   puts year.to_s
+elsif ARGV.length < 1 || ARGV.length > 2
+  puts "This cal implementation requires either (month) or (month year)."
 end
