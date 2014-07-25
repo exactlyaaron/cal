@@ -79,30 +79,22 @@ class Year
     end
 
     week = @year_array[month_num][line]
-    week.each do |day|
-      if day == nil
-        string << "   "
-      elsif day <= 9
-        string << " #{day} "
-      else
-        string << "#{day} "
-      end
-
-      if (line >= 5 && day == nil)
-        return string.rstrip!
-      end
+    7.times do |day_num|
+      day = @year_array[month_num][line][day_num]
+      string << "#{day.to_s}".rjust(2)
+      string << " "
     end
 
-    string = string[0...-1]
-    string << "  "
+    string << " "
 
     if iteration == 2
       string.rstrip! << "\n"
     end
 
-    # if iteration == 2 && row_count == 4 && line > 5
-    #   string = string[0...-1]
+    # if (line == 5 && string.end_with?("30\n")) || line == 5 && string.end_with?("31\n")
+    #   string << "tests" THIS BREAKS IT FOR SOME REASON
     # end
+
     return string
   end
 
@@ -127,7 +119,7 @@ class Year
           output << print_week(month, row_count, line)
         end
       end
-      output << "\n"
+      output.rstrip! << "\n\n"
     end
     output
   end
